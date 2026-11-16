@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="حمد و كلود: رحلتي مع كلود، من أول تجربة إلى قوالب سلة.">
+<meta name="description" content="حمد و كلود: رحلتي مع كلود، من الحلم الكبير إلى منصة زخ.">
 <meta property="og:title" content="حمد و كلود">
 <meta property="og:description" content="رحلتي مع كلود">
 <meta property="og:url" content="https://zakh.sa/">
@@ -103,18 +103,21 @@ svg#map{display:block;width:100%;height:auto;overflow:visible}
 .st{cursor:pointer;outline:none}
 .st .hit{fill:transparent}
 .st .ring{fill:none;stroke:none}
+.st.on text.num{fill:#fff}
 .st .dot{fill:var(--paper);stroke-width:4;transition:r .25s}
-.st:hover .dot,.st:focus-visible .dot{r:13}
+.st:hover .dot,.st:focus-visible .dot{r:17}
 .st.on .dot{fill:currentColor}
 .st:focus-visible .ring{stroke:var(--plum);stroke-width:3;fill:none}
 .st text{font-family:var(--f-body);font-size:17px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:6px;stroke-linejoin:round}
+.st text.num{font-size:14px;font-weight:700;fill:var(--ink);stroke:none;pointer-events:none}
 .st text.n{font-size:13px;font-weight:500;fill:var(--muted)}
 .shadow{fill:var(--ink);opacity:.15}
 
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:18px 20px;display:grid;gap:6px;border-inline-start:6px solid var(--c,var(--rust));min-height:150px}
 .panel .k{font-size:13px;color:var(--muted)}
 .panel h3{font-size:26px;color:var(--c,var(--rust))}
-.panel p{color:var(--ink-2)}
+.panel p{color:var(--ink-2);white-space:pre-line;line-height:1.75}
+.panel{max-height:460px;overflow-y:auto;overscroll-behavior:contain}
 .panel .go{justify-self:start;margin-top:6px;font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 16px;min-height:44px;text-decoration:none;display:inline-flex;align-items:center}
 .panel .go:hover{border-color:var(--ink)}
 .pager{display:flex;gap:8px}
@@ -132,7 +135,7 @@ svg#map{display:block;width:100%;height:auto;overflow:visible}
 .card h3{font-size:22px}
 .card p{font-size:14.5px;color:var(--ink-2)}
 .card .soon{font-size:12.5px;color:var(--rust);font-weight:600}
-@container stage (max-width:899px){.panel{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:5;min-height:0;box-shadow:0 10px 30px -10px rgba(43,33,24,.35)}}
+@container stage (max-width:899px){.panel{max-height:52vh;position:sticky;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:5;min-height:0;box-shadow:0 10px 30px -10px rgba(43,33,24,.35)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -163,7 +166,7 @@ svg#map{display:block;width:100%;height:auto;overflow:visible}
       <a href="#" data-link="whatsapp" target="_blank" rel="noopener" aria-label="واتساب للتعاون"><span class="ic wa"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.8z"/><path d="M9.2 8.6c-.5.4-.6 1.1-.3 1.8.8 1.8 2.3 3.3 4.1 4.1.7.3 1.4.2 1.8-.3l.4-.5-1.8-1-.7.6c-.9-.4-1.7-1.2-2.1-2.1l.6-.7-1-1.8z" fill="#fff" stroke="none"/></svg></span>تعاون</a>
       <a href="#themes" aria-label="قوالب سلة"><span class="ic sl"><svg viewBox="0 0 24 24" fill="none" stroke="#baf3e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>سلة</a>
     </nav>
-    <p class="note">نموذج أولي: الروابط مؤقتة.</p>
+    <p class="note">المحتوى تعليمي، وليس توصية بالبيع أو الشراء.</p>
   </aside>
 
   <main>
@@ -203,24 +206,28 @@ document.querySelectorAll('[data-link]').forEach(function(a){var u=MY_LINKS[a.da
 <script>
 (function(){
   var STOPS=[
-    {t:'أتعرّف على كلود',k:'المحطة ١',c:'#b5523b',p:'أول محادثة، وأول مرة أحس إن عندي زميل يفهم فكرتي ويشتغل عليها معي.'},
-    {t:'المشروع الأول',k:'المحطة ٢',c:'#a3483f',p:'أول مشروع بنيته مع كلود من الصفر. (اسمه وتفاصيله يجون من زخ)'},
-    {t:'السوشل ميديا',k:'المحطة ٣',c:'#8a4250',p:'بديت أشارك التجربة خطوة بخطوة على تيك توك وانستقرام وسناب.'},
-    {t:'الفيديو والأنميشن',k:'المحطة ٤',c:'#6a3d6e',p:'صرت أصمم فيديوهاتي المتحركة من فكرة مكتوبة لين مقطع جاهز للنشر.'},
-    {t:'قوالب سلة',k:'المحطة ٥',c:'#4b3a8c',p:'أبني قوالب متاجر عربية لمنصة سلة، تشتغل على الجوال أول.',go:'#themes',goT:'شوف القوالب'}
+    {"t": "الحلم الكبير", "k": "المحطة ١", "c": "#b5523b", "p": ["أول ما شفت توليد الصور والفيديو والنماذج المفتوحة، طار عقلي. وجتني فكرة وحدة: أبني موقع للسوق السعودي مثل Finviz، بخرائط حرارية تبين لك السوق كله بنظرة. وسميته: منصة زخ.", "السوشل ميديا كانت تقول إنها أسهل شي بالدنيا، فدخلت فيها بكل ثقلي: جهاز جديد، واشتراكات في كلود وجيميناي، وجربت النماذج المفتوحة. وبعدين سيرفر ودومين وسجل تجاري واسم تجاري وAPI لأسعار السوق، وحوالي 5,000 ريال شهرياً على الاشتراكات بس.", "وبنفس الوقت فتحت حساب تيك توك، عشان أول ما يخلص الموقع يكون عندي جمهور ينتظره.", "شهرين وأنا أبني… لين صار المحتوى ياخذ نص وقتي، والبرمجة صارت تتأخر يوم بعد يوم."]},
+    {"t": "صناعة المحتوى", "k": "المحطة ٢", "c": "#a84f45", "p": ["قلت: الجمهور قبل الموقع. وبديت أحاول أطلع فيديو مفيد ويجيب مشاهدات.", "بس كل محاولة كانت تطيح. كلود وقتها ما يطلع إلا نصوص، وجيميناي يغير أسلوبه كل مرة ويجيب معلومات مو دقيقة. فيديو بعد فيديو، وما فيه شي يثبت.", "وجاني اليأس.", "فقلت: خلني أبسطها. نروح لإكس (تويتر سابقاً)، بدون صور ولا فيديو، تغريدتين كل يوم: كلود يحلل شركة ويكتبها تغريدة، وجيميناي يجيب أهم أخبار اليوم. يمكن تجيب متابعين.", "خطة بسيطة… لين جا سؤال: مين بيكتب ويغرد كل يوم؟", "وهنا بدأت سالفة الأتمتة 😄"]},
+    {"t": "التشتت العظيم", "k": "المحطة ٣", "c": "#9a4c4f", "p": ["وأنا شاطر في التشتت 😅", "قلت: ليش أغرد بيدي؟ نتعلم n8n مع كلود، ونشترك في X API، والتغريدات تنكتب في Google Sheet بوقتها ويومها، وتنرسل لحالها بدون ما ألمسها. وأنا؟ حاط رجل على رجل وأرد على المتابعين.", "هذا الحلم. أما الواقع فكان أقبح: صعوبة، واشتراكات غالية فايدتها شبه معدومة، وثمرتها ما تجي إلا بعد سنين.", "انكسر الحماس. وفوقه إحساس بالذنب: تركت المشروع الأساسي، والفلوس اللي دفعتها تذكرني كل شهر.", "فوقفت."]},
+    {"t": "الكساد العظيم", "k": "المحطة ٤", "c": "#8d4959", "p": ["إجازة طويلة… طويلة مرة.", "الجهاز اللي كنت أحسبه بيجيب لي الملايين، صار مركون على الطاولة شهور."]},
+    {"t": "رسالة الـ23 دولار", "k": "المحطة ٥", "c": "#804664", "p": ["بداية أكتوبر 2026، واحد من الزملاء اللي كنت أزعجه بالذكاء الاصطناعي بدأ يستخدم كلود وHiggsfield ويولد فيديوهات… وأبدع.", "صار يسألني وأجاوبه من خبرتي البسيطة: \"تقدر تسوي كذا، وتقدر تسوي كذا\". أعلّمه وأنا نفسي واقف.", "لين جا اليوم اللي وصلتني فيه رسالة من البنك: سحب 23 دولار لأنثروبك. الاشتراك شغال وأنا مو شغال!", "ورجعت فتحت الجهاز… وكأني مستحي منه 😅"]},
+    {"t": "بوت المضاربة", "k": "المحطة ٦", "c": "#73436e", "p": ["قررت أبدأ بشي واضح: بوت مضاربة على التليقرام، أبنيه أنا وكلود.", "ثلاث أسابيع تجارب واختبارات، وطلعنا بأهم درس: المضاربة ما توكّل عيش.", "البوت للحين شغال والاختبارات مستمرة، بس بقوانين صارمة حطيناها أنا وكلود: بدون فلوس حقيقية، وأغلب الاختبارات تفشل، والنتيجة تبي انتظار طويل.", "وكان ممل… فرجعت للشي اللي فعلاً أحبه، وأبدع فيه، ومهتم فيه."]},
+    {"t": "كشف الأسرار", "k": "المحطة ٧", "c": "#664078", "p": ["والبوت ينتظر نتايج اختباراته، قلت أستغل الوقت: يا كلود، حلل لي محافظي، السعودية والأمريكية.", "والنتيجة؟ كارثية.", "وطلعت فيني الكبرياء: أكيد كلود هو اللي ما فهم. فعطيته كل ملف لكل شركة أملكها، من قسم علاقات المستثمرين في مواقع الشركات نفسها. لدرجة إني حرقت توكنات أسبوع كامل في كم يوم.", "وطلع كلامه صح.", "اختياراتي كانت عشوائية، وماخوذة بالعاطفة.", "بس اللي تعلمته في هالأيام ما تعلمته في سنين. وتركنا محفظتي، وصرت أحلل شركات برا المحفظة. واكتشفت إن اللي يشدني فعلاً هو كشف الأسرار: وش تخبي الأرقام ورا الشعارات الحلوة.", "وفجأة… بنق 💡"]},
+    {"t": "الفريق", "k": "المحطة ٨", "c": "#583d82", "p": ["بعد فترة قلت: لازم أرتب هالفوضى.", "فسويت ثلاث مشاريع في كلود، كأنهم موظفين عندي:\n🇸🇦 محلل السوق السعودي\n🇺🇸 محلل السوق الأمريكي\n🤖 بوت المضاربة", "وقبل ما نحلل أي شركة، جلسنا أنا والمحللين وحطينا القواعد: مقاييس وتصنيفات واختبارات، وأي شركة لازم تعدّيها كلها.", "أشتغل مع واحد، وإذا طوّل علي أروح للثاني. ومع الوقت تكدّس عندنا كم هائل من الشركات اللي عدّت الاختبارات.", "بس طلعت لنا مشكلة: أغلب الوقت انتظار. ننتظر الربع الجاي، أو إعلان، وأحياناً ينزل الربع عادي جداً وما يغير تقييم الشركة بشي.", "فصار عندي كنز من التحليلات… جالس على الرف.", "وهنا جات فكرة النشر على تيك توك."]},
+    {"t": "منصة زخ", "k": "المحطة ٩", "c": "#4b3a8c", "p": ["وطال عمرك، بديت أنشر على تيك توك.", "وما صرت لحالي. صار عندي فريق كامل، كلهم من كلود:\n🇸🇦 محلل السوق السعودي\n🇺🇸 محلل السوق الأمريكي\n✍️ كاتب المحتوى\n🎬 مهندس المونتاج\n🤖 بوت المضاربة", "المحللين يطلعون الأرقام، وكاتب المحتوى يحولها لقصة، ومهندس المونتاج يحطها بالصورة. وأنا؟ أقرر وأراجع وأنشر.", "ونزلت سلسلة \"لو استثمرت 10,000 ريال\"، وطارت. آلاف المشاهدات في ليلة وحدة، والمتابعين صاروا يكتبون أسهمهم في التعليقات ويقولون: احسبوه لنا.", "الحلم اللي بديت فيه قبل شهور رجع… بس بشكل ثاني.", "الدومين، والسجل التجاري، والإيميل… كلها باسم زخ من اليوم الأول.", "الاسم ما تغيّر. أنا اللي تغيّرت.", "المحطة الجاية: قوالب سلة… قريباً 👀"], "go": "#themes", "goT": "شوف القوالب"}
   ];
-  var U=[0,.25,.5,.75,1], NS='http://www.w3.org/2000/svg';
+  var U=STOPS.map(function(_,i){return i/(STOPS.length-1);}), NS='http://www.w3.org/2000/svg';
   var svg=document.getElementById('map'),panel=document.getElementById('panel'),
       prev=document.getElementById('prev'),next=document.getElementById('next');
   var stageEl=document.getElementById('stage'),wide={get matches(){return stageEl.clientWidth>=900;}},reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cur=0,u=0,f,hero,anim;
+  var cur=0,u=0,f,hero,anim,ar='١٢٣٤٥٦٧٨٩';
 
   function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
   function build(){
     svg.textContent='';
     var W,H;
     if(wide.matches){W=1000;H=620;f=function(s){return{x:930-860*s,y:560-470*s-70*Math.sin(s*Math.PI*3)};};}
-    else{W=360;H=980;f=function(s){return{x:180+105*Math.sin(s*Math.PI*2.5),y:50+870*s};};}
+    else{W=360;H=1300;f=function(s){return{x:180+105*Math.sin(s*Math.PI*3.5),y:50+1200*s};};}
     svg.setAttribute('viewBox','0 0 '+W+' '+H);
     var defs=el('defs',{}),g=el('linearGradient',{id:'grad',gradientUnits:'userSpaceOnUse',x1:f(0).x,y1:f(0).y,x2:f(1).x,y2:f(1).y});
     g.appendChild(el('stop',{offset:'0','stop-color':'#b5523b'}));g.appendChild(el('stop',{offset:'1','stop-color':'#4b3a8c'}));
@@ -230,12 +237,12 @@ document.querySelectorAll('[data-link]').forEach(function(a){var u=MY_LINKS[a.da
     STOPS.forEach(function(s,i){
       var p=f(U[i]),grp=el('g',{'class':'st',tabindex:'0',role:'button','aria-label':s.k+': '+s.t,style:'color:'+s.c});
       grp.appendChild(el('circle',{'class':'hit',cx:p.x,cy:p.y,r:30}));
-      grp.appendChild(el('circle',{'class':'ring',cx:p.x,cy:p.y,r:20}));
-      grp.appendChild(el('circle',{'class':'dot',cx:p.x,cy:p.y,r:10,stroke:s.c}));
-      var side=wide.matches?1:(p.x>180?-1:1), lx=wide.matches?p.x:p.x+side*24, ly=wide.matches?p.y+42:p.y+6;
+      grp.appendChild(el('circle',{'class':'ring',cx:p.x,cy:p.y,r:22}));
+      grp.appendChild(el('circle',{'class':'dot',cx:p.x,cy:p.y,r:14,stroke:s.c}));var nm=el('text',{x:p.x,y:p.y+5,'text-anchor':'middle','class':'num'});nm.textContent=ar[i];grp.appendChild(nm);
+      var side=wide.matches?1:(p.x>180?-1:1), lx=wide.matches?p.x:p.x+side*30, ly=wide.matches?(i%2?p.y-28:p.y+42):p.y+6;
       var anchor=wide.matches?'middle':(side>0?'end':'start');
       var tx=el('text',{x:lx,y:ly,'text-anchor':anchor});tx.textContent=s.t;grp.appendChild(tx);
-      var tn=el('text',{x:lx,y:ly+20,'text-anchor':anchor,'class':'n'});tn.textContent=s.k;grp.appendChild(tn);
+      
       grp.addEventListener('click',function(){go(i);});
       grp.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(i);}});
       svg.appendChild(grp);
@@ -251,7 +258,7 @@ document.querySelectorAll('[data-link]').forEach(function(a){var u=MY_LINKS[a.da
   function mark(){
     [].forEach.call(svg.querySelectorAll('.st'),function(g,i){g.classList.toggle('on',i<=cur);g.setAttribute('aria-pressed',i===cur);});
     var s=STOPS[cur];panel.style.setProperty('--c',s.c);
-    panel.innerHTML='<span class="k">'+s.k+'</span><h3>'+s.t+'</h3><p>'+s.p+'</p>'+(s.go?'<a class="go" href="'+s.go+'">'+s.goT+'</a>':'');
+    panel.innerHTML='<span class="k">'+s.k+'</span><h3>'+s.t+'</h3>'+s.p.map(function(x){return '<p>'+x.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];})+'</p>';}).join('')+(s.go?'<a class="go" href="'+s.go+'">'+s.goT+'</a>':'');
     prev.disabled=cur===0;next.disabled=cur===STOPS.length-1;
   }
   function go(i){
